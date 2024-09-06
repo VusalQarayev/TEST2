@@ -1,0 +1,26 @@
+﻿<h2>Product Dashboard</h2>
+<a href="/Admin/AddProduct">Add New Product</a>
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var product in Model)
+        {
+            <tr>
+                <td>@product.Name</td>
+                <td>@product.Price</td>
+                <td>@product.Quantity</td>
+                <td>
+                    <a href="/Admin/EditProduct/@product.Id">Edit</a> |
+                    <a href="/Admin/DeleteProduct/@product.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
